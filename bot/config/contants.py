@@ -1,4 +1,5 @@
 class Constants:
+    
     welcome_msg = """Assalomu Alaykum, <b>{name}</b>!
 
 Ijodimizga qiziqish bildirganingiz uchun tashakkur!

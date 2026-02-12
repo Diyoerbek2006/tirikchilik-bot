@@ -42,7 +42,7 @@ def cart1_hendler(update: Update, context: CallbackContext):
 
 def cart2_hendler(update: Update, context:CallbackContext):
     update.message.reply_html(
-        text=contants.welcome_msg.format(name=update.effective_user.full_name),
+        text="kerakli bulimni tanlang"
         reply_markup=ReplyKeyboardMarkup(
             keyboard=[
                 [
@@ -52,6 +52,22 @@ def cart2_hendler(update: Update, context:CallbackContext):
                 [KeyboardButton(text="kantaklar"), KeyboardButton(text="bosh menyu")],
             ],
             resize_keyboard=True,
-            one_time_keyboard=True,
+            #one_time_keyboard=True,
         ),
+    )
+
+def language_hendler(update: Update, context: CallbackContext):
+    update.message.reply_html(
+        text='<b>tilni tanlang</b>'
+        reply_markup=ReplyKeyboardMarkup(
+            keyboard=[
+                [
+                    KeyboardButton(text="RU"),
+                    KeyboardButton(text="UZB"),
+                ],
+            ],
+            resize_keyboard=True,
+            #one_time_keyboard=True,
+        ),
+
     )
