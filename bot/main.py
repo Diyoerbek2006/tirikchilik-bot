@@ -9,6 +9,8 @@ from .config import settings
 from .handlers import (
     start_command,
     cart_hendler,
+    cart1_hendler,
+    cart2_hendler
 )
 
 
@@ -25,5 +27,14 @@ def main() -> None:
         callback=cart_hendler
     ))
 
+    dispatcher.add_handler(MessageHandler(
+        filters=Filters.text('Hamkorlik'),
+        callback=cart1_hendler
+    ))
+
+    dispatcher.add_handler(MessageHandler(
+        filters=Filters.text('Malumotlar'),
+        callback=cart2_hendler
+    ))
     updater.start_polling()
     updater.idle()

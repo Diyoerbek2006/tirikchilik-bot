@@ -25,7 +25,7 @@ def start_command(update: Update, context: CallbackContext):
                 # ],
             ],
             resize_keyboard=True,
-            # one_time_keyboard=True,
+            one_time_keyboard=True,
         ),
     )
 
@@ -35,3 +35,23 @@ def cart_hendler(update: Update, context: CallbackContext):
         text='<b>Sizning savatingiz bo\'sh</b>'
     )
     
+def cart1_hendler(update: Update, context: CallbackContext):
+    update.message.reply_html(
+        text='<b>bizning hamkorlar</b>'
+    )
+
+def cart2_hendler(update: Update, context:CallbackContext):
+    update.message.reply_html(
+        text=contants.welcome_msg.format(name=update.effective_user.full_name),
+        reply_markup=ReplyKeyboardMarkup(
+            keyboard=[
+                [
+                    KeyboardButton(text="izoh qoldirish"),
+                    KeyboardButton(text="yetkazib berish shartlari"),
+                ],
+                [KeyboardButton(text="kantaklar"), KeyboardButton(text="bosh menyu")],
+            ],
+            resize_keyboard=True,
+            one_time_keyboard=True,
+        ),
+    )
